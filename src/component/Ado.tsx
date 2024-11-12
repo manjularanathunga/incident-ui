@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { Jira } from "../interfaces/Interfaces";
 import AdoListPane from "../atoms/ado/AdoListPane";
 import AdoInfoPane from "../atoms/ado/AdoInfoPane";
+import configData from "../../config.json";
 
 interface Props {
   handleAdoNotes: (rc: Jira) => void;
 }
 
 const Ado = () => {
-  const httpUrl = "http://localhost:7001";
   const [isDurtyAdo, setIsDurtyAdo] = useState(true);
-  const [adoEndPoint] = useState(httpUrl + "/ado");
+  const [adoEndPoint] = useState(configData.SERVER_URL + "/ado");
   const [adoNotes, setAdoNotes] = useState("");
 
   const handleAdoNotes = (r: Jira) => {

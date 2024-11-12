@@ -5,9 +5,11 @@ import { Record } from "../interfaces/Interfaces";
 import AddLinkModal from "../atoms/links/AddLinkModal";
 import axios from "axios";
 import MButton from "../common/MButton";
+import configData from "../../config.json";
 
 const Links = () => {
-  const [endPoint] = useState("http://localhost:7001/link");
+    console.log("Links host " + JSON.stringify(configData.SERVER_URL));
+  const [endPoint] = useState(configData.SERVER_URL + "/link");
   //const [modalState, setModalState] = useState(false);
   const [showLinkModal, setShowLinkModal] = useState(false);
   const [generalList, setGeneralList] = useState([]);

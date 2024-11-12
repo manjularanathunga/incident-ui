@@ -6,16 +6,16 @@ import TemplatePane from "../atoms/pex/template/TemplatePane";
 import MAleart from "../common/MAlert";
 import BalanceSummery from "../atoms/pex/balance/BalanceSummery";
 import moment from "moment";
+import configData from "../../config.json";
 
 const Balance = () => {
-  const httpUrl = "http://localhost:7001";
   const [isDurty, setIsDurty] = useState(true);
   const [isDurtyBalance, setsDurtyBalance] = useState(true);
   const [balanceList, setBalanceList] = useState([]);
   const [filterBalanceList, setFilterBalanceList] = useState([]);
   const [showAdd, setShowAdd] = useState(false);
   const [showBalanceForm, setShowBalanceForm] = useState(Boolean);
-  const [balanceEndPoint] = useState(httpUrl + "/balance");
+  const [balanceEndPoint] = useState(configData.SERVER_URL + "/balance");
   const [visibleAlert, setVisibleAlert] = useState(false);
   const [isDurtySummary, setIsDurtySummary] = useState(true);
   const [summry, setSummary] = useState({});
